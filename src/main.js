@@ -1,5 +1,4 @@
-import './style.css';
-import { router } from './ui/router';
+import { router } from './ui/router.js';
 
 // Initialize the app
 window.addEventListener('DOMContentLoaded', () => {

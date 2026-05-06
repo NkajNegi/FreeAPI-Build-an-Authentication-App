@@ -4,19 +4,19 @@ export const toast = {
     const toastEl = document.createElement('div');
     
     const colors = type === 'success' 
-      ? 'bg-white dark:bg-gray-800 border-green-500 text-green-700 dark:text-green-400' 
-      : 'bg-white dark:bg-gray-800 border-red-500 text-red-700 dark:text-red-400';
+      ? 'glass border-emerald-500/50 text-emerald-400' 
+      : 'glass border-red-500/50 text-red-400';
     
     const icon = type === 'success'
-      ? `<svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+      ? `<svg class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
       : `<svg class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
 
-    toastEl.className = `flex items-center p-4 mb-4 rounded-xl shadow-2xl border-l-4 ${colors} transform transition-all duration-500 translate-x-full opacity-0 max-w-md w-full pointer-events-auto`;
+    toastEl.className = `flex items-center p-5 mb-4 rounded-2xl shadow-2xl border-l-4 ${colors} transform transition-all duration-500 translate-x-full opacity-0 max-w-md w-full pointer-events-auto backdrop-blur-xl`;
     toastEl.innerHTML = `
-      <div class="mr-3 flex-shrink-0">${icon}</div>
-      <div class="text-sm font-bold flex-grow">${message}</div>
-      <button class="ml-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
-        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      <div class="mr-4 flex-shrink-0">${icon}</div>
+      <div class="text-sm font-bold flex-grow tracking-wide">${message}</div>
+      <button class="ml-4 text-dim-400 hover:text-white transition-colors">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
     `;
     
